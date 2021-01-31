@@ -61,7 +61,7 @@ let store = {
             this._state.messagesPage.messages.push(newMessage)
             this._state.messagesPage.newMessageText = '';
             this._callSubscriber(this._state);
-        }cxx
+        }
 
         else if (action.type === 'UPDATE-NEW-POST-TEXT') {
             this._state.profilePage.newPostText = action.newText;
