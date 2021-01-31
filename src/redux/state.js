@@ -96,7 +96,7 @@ export const updateNewPostTextActionCreator = (text) => {
         newText: text
     }
 }
-fdg
+
 export const updateNewMessageTextActionCreator = (text) => {
 
     return {
