@@ -3,13 +3,8 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        {id: 1, fullName: 'Maksim', followed: false, status: 'Bitch, ima boss', location: {city: 'Khabarovsk', country: 'Russia'} },
-        {id: 2, fullName: 'Viktor', followed: true, status: 'Need a doctor', location: {city: 'Moscow', country: 'Russia'} },
-        {id: 3, fullName: 'Oleksandr', followed: false ,status: 'My first job!', location: {city: 'Kiev', country: 'Ukraine'} },
-    ],
-
-}
+    users: []
+};
 
 const usersReducer = (state = initialState, action) => {
 
