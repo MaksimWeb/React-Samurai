@@ -1,7 +1,20 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
+import Preloader from "../../Common/Preloader/Preloader";
+import JobYes from "../../Common/JobImage/JobYes";
+import JobNo from "../../Common/JobImage/JobNo";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
+
+    let jobImage = () => {
+        return props.profile.lookingForAJob ? <JobYes/> : <JobNo/>
+    }
+
     return (
         <div>
             <div><img
@@ -9,7 +22,18 @@ const ProfileInfo = () => {
                 alt=""/>
             </div>
             <div className={s.descriptionBlock}>
-                ava + description
+                <img src={props.profile.photos.large} alt=""/>
+                <div className={s.contactsBlock}>
+                    Мои контакты:
+                    <span>{props.profile.contacts.facebook}</span>
+                    <span>{props.profile.contacts.vk}</span>
+                    <span>{props.profile.contacts.twitter}</span>
+                    <span>{props.profile.contacts.instagram}</span>
+                </div>
+                <div>
+                    Ищу работу:
+                    {jobImage()}
+                </div>
             </div>
         </div>
     )
