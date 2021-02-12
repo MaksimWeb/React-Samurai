@@ -17,7 +17,7 @@ const MyPosts = (props) => {
     return (
         <div className={s.postsBlock}>
             <h3>My post</h3>
-            <MyPostReduxForm onSubmit={addNewPost}/>
+            <MyPostReduxForm  onSubmit={addNewPost}/>
             <div className={s.posts}>
                 {propsItems}
             </div>
@@ -29,9 +29,9 @@ const MyPosts = (props) => {
 const maxLength10 = maxLengthCreator(10)
 
 const MyPostForm = (props) => {
-    return <form onSubmit={props.handleSubmit}>
+    return <form  onSubmit={props.handleSubmit}>
         <div>
-            <Field placeholder={"Enter text"} name={"newPostBody"} validate={[requiredField, maxLength10]} component={Textarea} />
+            <Field placeholder={"Enter text"} name={"newPostBody"} validate={[requiredField, maxLength10]}  component={Textarea} />
         </div>
         <button>Add post</button>
     </form>
