@@ -4,6 +4,7 @@ import Preloader from "../../Common/Preloader/Preloader";
 import JobYes from "../../Common/JobImage/JobYes";
 import JobNo from "../../Common/JobImage/JobNo";
 import ProfileStatus from "./ProfileStatus"
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -24,7 +25,7 @@ const ProfileInfo = (props) => {
             {/*</div>*/}
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large} alt=""/>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 <div className={s.contactsBlock}>
                     Мои контакты:
                     <span>{props.profile.contacts.facebook}</span>
